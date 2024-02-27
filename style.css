@@ -1,5 +1,100 @@
-#heading{
-    display: flex;
-    color: red;
-    justify-content:center;
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
 }
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  margin: 5px 5px;
+  padding: 2px 2px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  border: 1px solid rgb(73, 70, 70);
+}
+
+.img-container img {
+  height: 90px;
+}
+
+.nav-items ul {
+  padding: 0px 10px;
+  display: flex;
+}
+
+.nav-items ul li {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: sans-serif;
+  align-items: end;
+  padding: 30px 10px;
+  list-style: none;
+  color: rgb(44, 43, 43);
+}
+
+.res-conatiner {
+  padding: 0px 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rescard {
+  height: 350px;
+  width: 300px;
+  border-radius: 15px;
+  background-color: rgb(161, 173, 184);
+  padding: 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+.rescard:hover {
+  box-shadow: 2px 4px 8px rgb(10, 10, 10);
+}
+.rescard:hover {
+  cursor: pointer;
+  border-radius: 1px solid white;
+  box-shadow: 2px 4px 8px rgb(10, 10, 10);
+}
+.rescard img {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.rescard h4 {
+  color: black;
+  font-size: 15px;
+}
+.rescard .lineOne {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 5px;
+}
+.rescard .lineOne h3 {
+  font-size: 15px;
+  background-color: rgb(8, 158, 53);
+  padding: 3px 10px;
+  border-radius: 35px;
+}
+.filter {
+  margin: 25px 5px;
+  display: flex;
+  justify-content: center;
+}
+.filter-btn {
+  padding: 5px 5px;
+  cursor: pointer;
+  font-size: 25px;
+  border-radius: 25px;
+  border: none;
+  background-color: blueviolet;
+}
+/* 
+const filteredList = resturantList.filter(
+              (res) => res.data.avgRating > 4
+              setResturantList(filteredList); */
