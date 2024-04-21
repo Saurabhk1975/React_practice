@@ -8,8 +8,7 @@ const ResturantCard = (probs) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime,
-  } = resdata?.data;
+  } = resdata?.info;
   return (
     <div className="rescard">
       <img src={IMG_CDN_URL + cloudinaryImageId} />
@@ -22,8 +21,8 @@ const ResturantCard = (probs) => {
         <h5>₹{costForTwo} For two</h5>
       </div>
       <div className="lineOne">
-        <h4>{resdata.data.area}</h4>
-        <h5>{deliveryTime} Minutes</h5>
+        <h4>{resdata.info.locality}</h4>
+        <h5>{resdata.info.sla.slaString} Minutes</h5>
       </div>
     </div>
   );

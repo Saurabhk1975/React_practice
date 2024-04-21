@@ -43,7 +43,6 @@ html {
   flex-wrap: wrap;
 }
 .rescard {
-  height: 350px;
   width: 300px;
   border-radius: 15px;
   background-color: rgb(161, 173, 184);
@@ -84,17 +83,59 @@ html {
 .filter {
   margin: 25px 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .filter-btn {
   padding: 5px 5px;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 25px;
   border: none;
   background-color: blueviolet;
 }
-/* 
-const filteredList = resturantList.filter(
-              (res) => res.data.avgRating > 4
-              setResturantList(filteredList); */
+.search input {
+  height: 30px;
+  margin: 0px 10px;
+  font-size: 20px;
+}
+.search button {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  padding: 0px 10px;
+  background-color: bisque;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.shimmer-card {
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: #ada7a7;
+}
+
+.login-logout {
+  background-color: aquamarine;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  align-items: center;
+  width: 70px;
+  height: 30px;
+  border: none;
+}
+
+.Menu {
+  margin-left: 30px;
+  
+}
+
+.Menu ul {
+  margin-left: 30px;
+}
