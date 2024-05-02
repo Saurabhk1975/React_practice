@@ -1,44 +1,48 @@
-import React, { useState, useEffect } from "react";
 import { Shimmer } from "./Shimmer";
+import { useParams } from "react-router-dom";
+import useRestaurant from "../utils/useRestaurant";
+import { MenuCategory } from "./MenuCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+  const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const resInfo = useRestaurant(resId);
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId=572870"
-    );
-    const json = await data.json();
-    setResInfo(json);
-  };
+  const [showAccordian, setAccordian] = useState(null);
 
-  // Render Shimmer if resInfo is null
   if (resInfo === null) return <Shimmer />;
 
   const { name, costForTwoMessage, cuisines } =
-    resInfo?.data?.cards?.[2]?.card?.card?.info || {};
+    resInfo?.cards?.[2]?.card?.card?.info || {};
 
-  // Destructure itemCards correctly
   const { itemCards } =
-    resInfo?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]
-      ?.card?.card?.categories || {};
+    resInfo.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card;
 
-  console.log(itemCards);
+  const categories =
+    resInfo.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
   return (
-    <div className="Menu">
-      <h1>{name}</h1>
-      <p>{costForTwoMessage}</p>
-      <p>{cuisines}</p>
-      <h2>Menu</h2>
-      <ul>
-        {itemCards &&
-          itemCards.map((item, index) => <li key={index}>{item.info.name}</li>)}
-      </ul>
+    <div className="text-center">
+      <h1 className="font-bold py-3 text-xl">{name}</h1>
+      <p className="font-bold">{costForTwoMessage}</p>
+      <p>{cuisines.join(", ")}</p>
+      <h2 className="font-bold py-2 text-lg">Menu</h2>
+      {/*Accordian*/}
+      {categories.map((category, index) => (
+        <MenuCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+          showAccordian={index === showAccordian ? true : false}
+          setAccordian={() => {
+            setAccordian(index);
+          }}
+        />
+      ))}
     </div>
   );
 };

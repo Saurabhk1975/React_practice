@@ -1,5 +1,5 @@
 export const LOGO_URL =
-  "https://www.equitypandit.com/wp-content/uploads/2022/07/zomato-1200x600-1.jpg";
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS--JBuzojUDonwHcY83BtINn2DEhiSicBWHWE8V-2DA6pt1wg7QJM8JZrkpDpM63kCak&usqp=CAU";
 
 // Image CDN URL for Restaurant card
 export const IMG_CDN_URL =
@@ -11,4 +11,6 @@ export const SWIGGY_API_URL =
 
 // Swiggy API to get Restaurant Menu data with corsproxy
 export const SWIGGY_MENU_API_URL =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId=";
+
+export const gitHubAPI = "https://api.github.com/Saurabh1975k";
