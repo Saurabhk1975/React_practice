@@ -5,7 +5,10 @@ const ResturantCard = (probs) => {
   const { cloudinaryImageId, name, avgRating, cuisines, costForTwo } =
     resdata?.info;
   return (
-    <div className="m-4 p-4 w-[235px] h-[320px] flex flex-col justify-between rounded-xl bg-gray-100 hover:bg-gray-200">
+    <div
+      className="m-4 p-4 w-[235px] h-[320px] flex flex-col justify-between rounded-xl bg-gray-100 hover:bg-gray-200"
+      data-testid="res-card"
+    >
       <img
         className="rounded-lg h-32 object-cover"
         src={IMG_CDN_URL + cloudinaryImageId}

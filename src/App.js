@@ -11,7 +11,7 @@ import Grocery from "./components/Grocery";
 import { UserContext } from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
-import  Cart  from "./components/Cart";
+import Cart from "./components/Cart";
 
 // React Element
 
@@ -35,7 +35,7 @@ import  Cart  from "./components/Cart";
 // React component
 const Grocery = lazy(() => import("./components/Grocery"));
 const App = () => {
-  const [userName, setUserName] = useState("Saurabh");
+  const [userName, setUserName] = useState(null);
   useEffect(() => {
     const data = {
       name: "Saurabh Kumar",

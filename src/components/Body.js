@@ -30,6 +30,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2599333&lng=77.412615&collection=83649&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     setResturantList(
       json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
@@ -47,6 +48,7 @@ const Body = () => {
       <h1>Heyy, I thik You are Lost , Please Check Your Internet Connection</h1>
     );
   }
+
   return (
     <div className="body">
       <div className="filter flex">
@@ -55,6 +57,7 @@ const Body = () => {
           <input
             className="border border-solid border-black"
             type="text"
+            data-testid="searchInput"
             value={searchText}
             onChange={(event) => {
               setSearchText(event.target.value);

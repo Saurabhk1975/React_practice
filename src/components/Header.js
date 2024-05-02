@@ -5,7 +5,7 @@ import useInternetStatus from "../utils/useInternetStatus";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [btndata, setbtndata] = useState("login");
+  const [btndata, setbtndata] = useState("Login");
   const onlineStatus = useInternetStatus();
 
   // Using This hooks Subscribing our store for reading the data
@@ -39,9 +39,9 @@ const Header = () => {
             <button
               className="hover:bg-red-300 px-2"
               onClick={() => {
-                btndata === "login"
-                  ? setbtndata("logout")
-                  : setbtndata("login");
+                btndata === "Login"
+                  ? setbtndata("LogOut")
+                  : setbtndata("Login");
               }}
             >
               {btndata}
